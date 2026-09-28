@@ -22,6 +22,7 @@
 <body style="background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div>
        <a
+        id="doboz"
         class="pulzalo"
             href="https://chess.com/"
             target="_blank"
@@ -29,6 +30,11 @@
         >
         😂 Kattints Ide 
         </a>
+    </div>
+    <br>
+    <div>
+        <button onclick="document.getElementById('doboz').style.backgroundColor = ''" style="margin: 50%; background-color: green">Kattints Ide is!</button>
+        <button onclick="document.getElementById('doboz').style.backgroundColor = 'red'" style="margin: 50%; background-color: red;">Kattints Ide is!</button>
     </div>
 </body>
 </html>
