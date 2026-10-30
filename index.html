@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kókai Balázs Fan Page 🌹🔥</title>
+    <title>Kókai Balázs Fan Page 🌈💅🔥</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap');
 
@@ -60,14 +60,23 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #fff;
-            text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 40px #ff477e, 0 0 80px #ff477e;
-            animation: pulse-glow 2s infinite alternate;
+            background: linear-gradient(90deg, #ff0055, #ff9a00, #ffee00, #00e676, #00b0ff, #b388ff, #ff4081);
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
+            animation: pulse-glow 2s infinite alternate, rainbow-slide 6s linear infinite, squish 4s ease-in-out infinite;
+        }
+
+        @keyframes rainbow-slide {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 800% 50%; }
         }
 
         @keyframes pulse-glow {
-            from { text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff477e; }
-            to { text-shadow: 0 0 20px #ff0055, 0 0 30px #ff0055, 0 0 50px #ff477e, 0 0 100px #ff477e; }
+            from { text-shadow: 0 0 10px #ff0055, 0 0 20px #ffee00, 0 0 30px #00e676; }
+            to { text-shadow: 0 0 20px #ff9a00, 0 0 30px #00b0ff, 0 0 50px #b388ff, 0 0 100px #ff4081; }
         }
 
         .header p {
@@ -94,7 +103,7 @@
             border: 4px solid #fff;
             box-shadow: 0 0 20px #ff0055;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: breathe 4s ease-in-out infinite;
+            animation: wobble 3.5s ease-in-out infinite;
         }
 
         .profile-pics img:nth-child(2) {
@@ -153,6 +162,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            animation: tag-hop 2.8s ease-in-out infinite;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -214,6 +224,7 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
+            animation: wiggle 1.6s ease-in-out infinite;
         }
 
         .fire {
@@ -251,6 +262,236 @@
             50% { opacity: 1; }
             100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
+
+        /* ===== GOOFY MODE ENABLED ===== */
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-4deg) scale(1); }
+            25% { transform: rotate(4deg) scale(1.06); }
+            50% { transform: rotate(-3deg) scale(1.01); }
+            75% { transform: rotate(3deg) scale(1.06); }
+        }
+
+        @keyframes squish {
+            0%, 100% { transform: scale(1, 1) rotate(0deg); }
+            25% { transform: scale(1.04, 0.94) rotate(-1deg); }
+            50% { transform: scale(0.96, 1.06) rotate(1deg); }
+            75% { transform: scale(1.03, 0.96) rotate(-0.5deg); }
+        }
+
+        @keyframes tag-hop {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            30% { transform: translateY(-9px) rotate(-3deg); }
+            60% { transform: translateY(0) scale(1.05, 0.93); }
+            80% { transform: translateY(-4px) rotate(2deg); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg) translateY(-3px); }
+        }
+
+        @keyframes rise-spin {
+            0% { transform: translateY(105vh) rotate(-360deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-15vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes march {
+            from { left: -18vw; }
+            to { left: 118vw; }
+        }
+
+        .skill-tag:nth-child(2) { animation-delay: 0.3s; }
+        .skill-tag:nth-child(3) { animation-delay: 0.6s; }
+        .skill-tag:nth-child(4) { animation-delay: 0.9s; }
+
+        .float-emoji {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            z-index: 2;
+            font-size: 2.4em;
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+            animation: rise-spin linear infinite;
+        }
+
+        .march {
+            position: fixed;
+            bottom: 10px;
+            left: -18vw;
+            font-size: 2.4em;
+            z-index: 2;
+            pointer-events: none;
+            animation: march 22s linear infinite;
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
+        }
+
+        /* ===== BRAINROT SAGA ARCHIVE ===== */
+        @keyframes hue-cycle {
+            to { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes chaos-tilt {
+            0%, 100% { transform: rotate(-0.6deg); }
+            50% { transform: rotate(0.6deg); }
+        }
+
+        .saga-card {
+            background: linear-gradient(135deg, rgba(255,0,85,0.12), rgba(0,230,118,0.10), rgba(74,0,224,0.12));
+            border: 4px dashed #ffee00;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 35px 0;
+            text-align: center;
+            animation: hue-cycle 8s linear infinite, chaos-tilt 6s ease-in-out infinite;
+        }
+
+        .saga-card p {
+            line-height: 1.9;
+            margin: 16px 0;
+            font-size: 1.05em;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(90deg, #ff0055, #ff9a00, #ffee00, #00e676, #00b0ff, #b388ff, #ff4081);
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow-slide 4s linear infinite;
+        }
+
+        .saga-title {
+            font-size: 1.8em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+        }
+
+        .saga-scream {
+            font-size: 1.3em;
+            font-weight: 900;
+            line-height: 2;
+            letter-spacing: 1px;
+            animation: wiggle 1.2s ease-in-out infinite;
+        }
+
+        .score-board {
+            font-weight: 900;
+            text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.35);
+            border: 2px solid #00e676;
+            border-radius: 15px;
+            padding: 15px;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            animation: tag-hop 3s ease-in-out infinite;
+        }
+
+        /* ===== TWO COLUMN CHAOS LAYOUT ===== */
+        .container {
+            max-width: 980px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .header, .footer { grid-column: 1 / -1; }
+
+        .main-col, .side-col {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .side-box {
+            background: rgba(10, 10, 20, 0.55);
+            border: 3px solid rgba(255, 71, 126, 0.5);
+            border-radius: 20px;
+            padding: 20px 18px;
+            margin: 0 0 30px 0;
+            animation: chaos-tilt 7s ease-in-out infinite;
+        }
+
+        .side-box h3 {
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.05em;
+        }
+
+        .meter {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            height: 18px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #00e676, #ffee00, #ff0055);
+            transform-origin: left;
+            animation: meter-grow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes meter-grow {
+            from { transform: scaleX(0.3); }
+            to { transform: scaleX(0.95); }
+        }
+
+        .meter-label {
+            font-size: 0.9em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stickers {
+            font-size: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .stickers span {
+            display: inline-block;
+            animation: sticker-spin 3.2s linear infinite;
+        }
+
+        .stickers span:nth-child(2n) { animation-duration: 4.4s; }
+        .stickers span:nth-child(3n) { animation-duration: 5.1s; }
+
+        @keyframes sticker-spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.25); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .side-list {
+            text-align: left;
+            line-height: 2;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .side-col .link-btn {
+            font-size: 0.95em;
+            padding: 12px 15px;
+        }
+
+        .side-col .links { padding-top: 5px; }
+
+        @media (max-width: 720px) {
+            .container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -264,13 +505,24 @@
         <div class="particle" style="left: 90%; animation-duration: 10s; animation-delay: 5s;"></div>
         <div class="particle" style="left: 20%; animation-duration: 9s; animation-delay: 7s;"></div>
         <div class="particle" style="left: 80%; animation-duration: 11s; animation-delay: 3s; width: 6px; height: 6px;"></div>
+
+        <div class="float-emoji" style="left: 6%; animation-duration: 13s; animation-delay: 0s;">🐔</div>
+        <div class="float-emoji" style="left: 24%; animation-duration: 15s; animation-delay: 4s; font-size: 1.8em;">🧋</div>
+        <div class="float-emoji" style="left: 44%; animation-duration: 11s; animation-delay: 2s;">👽</div>
+        <div class="float-emoji" style="left: 62%; animation-duration: 17s; animation-delay: 6s; font-size: 2em;">🪩</div>
+        <div class="float-emoji" style="left: 82%; animation-duration: 13s; animation-delay: 1s;">🐸</div>
+        <div class="float-emoji" style="left: 54%; animation-duration: 19s; animation-delay: 9s; font-size: 1.6em;">💅</div>
     </div>
+
+    <div class="march">🦆🦆🦆🦆🦆</div>
 
     <div class="container">
         <div class="header">
             <h1>Kókai Balázs <span class="fire">🔥</span></h1>
-            <p>Ultimate Fan Page</p>
+            <p>The Icon. The Legend. The Moment. 💅🏳️‍🌈</p>
         </div>
+
+        <div class="main-col">
 
         <div class="profile-pics">
             <img src="https://avatars.githubusercontent.com/u/196047120?v=4" alt="Balázs Kókai Profile (micr0softstore)">
@@ -278,8 +530,9 @@
         </div>
 
         <div class="bio">
-            <p>Meet <strong>Kókai Balázs</strong>, an absolute legend and incredibly talented 13-year-old developer hailing from Budaörs, Hungary! 🇭🇺</p>
-            <p>He possesses god-tier coding skills and a burning passion for Android development, elite system modification, and insane gaming utilities.</p>
+            <p>Behold: <strong>Kókai Balázs</strong> — a 15-year-old coding ICON 🔥 who doesn't just live in Budaörs, Hungary 🇭🇺💅, he owns the entire skibidi continuum from there. 🚽🗿</p>
+            <p>The apps beg HIM for a pull request on their knees 🙏💻. He edits APKs and leaves the Play Store cooked 🔥📱, ports entire ROMs before breakfast 🍳, and builds TWRP for phones actively filing restraining orders 📵😭.</p>
+            <p>Store his ROMs on GitHub and it gains 17kg of pure aura ✨📈. His commits are so sigma the commit history does the griddy 🕺. He's not up-and-coming — he's the final boss of Android dev, and the firewall we all rent in has better Wi-Fi than us. 😭🔥</p>
         </div>
 
         <div class="skills">
@@ -288,6 +541,93 @@
             <span class="skill-tag">Editing APKs</span>
             <span class="skill-tag">GitHub Actions</span>
         </div>
+
+        <div class="saga-card">
+            <h2 class="saga-title rainbow-text">Kókai Balázs — The Ultimate ROM Fairy 🏳️‍🌈📀🔥</h2>
+            <p>Kókai Balázs nem csak kódol 💻,<br>
+            ő a skibidi APK continuum CEO-ja 👔🚽✨<br>
+            reggel 4:20-kor felkel ⏰,<br>
+            és már fanum taxeli a bootloadert 🦝💸<br>
+            csak mert unatkozik 😭🙏</p>
+            <p>Amikor kimondja hogy „merge me daddy" 🗣️💅,<br>
+            17 milliárd ohioi GitHub star ⭐🤡<br>
+            egyszerre kezd rizzelni 😎🗿 a Holdon 🌙<br>
+            miközben a skibidi neutrínók 🚽⚛️<br>
+            TWRP-t rendelnek a negyedik dimenzióból 📐🌌</p>
+            <p>A giga gyatt recovery detektor 📡🍑<br>
+            azonnal overloadol 💥💥💥<br>
+            a bing chilling index 🥶📈 9000%-ra nő 🚀<br>
+            és a környező kernelok 🧠 automatikusan<br>
+            bekapcsolják a sigma üzemmódot 🗿🍷</p>
+            <p>Egyetlen Kókai-commit 🐻🍞<br>
+            több aurát ✨👑 tartalmaz,<br>
+            mint 12 kvadrillió turbo raccoon 🦝⚡️<br>
+            és egy bluetooth-os dinoszaurusz 🦖📶 együttvéve 💀🙏</p>
+            <p>Ha Kókai egyszer tüsszent 🤧💥<br>
+            a reality.dll 📂❌ összeomlik 🖥️🔥<br>
+            a víz elkezd felfelé flash-elni 💧⬆️<br>
+            a banánok 🍌 elkezdenek adót fizetni 💸<br>
+            és a háttérben egy gigantikus hörcsög 🐹🎺<br>
+            phonk remixet 🎶🔥 játszik a kozmikus tejfölre 🥛🌌</p>
+            <p class="saga-scream rainbow-text">KÓKAI BALÁZS FOREVER 🏳️‍🌈🚀💯<br>
+            SKIBIDI OHIO SIGMA GYATT RIZZ DELUXE MAX PRO ULTRA PLUS+™ 🚽🗿🍷😎🔥💀🙏✨🌽🍕🍌⚛️🌌🚀🚀🚀🚀🚀</p>
+        </div>
+
+        <div class="saga-card">
+            <h2 class="saga-title rainbow-text">Bence vs Dávid 2: Electric Boogaloo ♟️💀</h2>
+            <p>Tóth Bence István megint sakkozni próbál,<br>
+            Dávid ránéz és már előre röhögve áll 😂</p>
+            <p><strong>Bence:</strong> „Ezúttal sigma leszek, figyelj tesó!"<br>
+            <strong>Dávid:</strong> „Bro… ez még mindig skill issue 💀"</p>
+            <p>Bence húzza a huszárt: „Taktika bro!"<br>
+            Dávid: „Ez konkrétan blunder, no cap 🗿"</p>
+            <p>Bence királya sír: „Hova menjek atyám??"<br>
+            Dávid bemondja: <strong>SAKK-MATT</strong>, szevasz bátyám 😭♟️</p>
+            <p>Skibidi dop dop, Bence agya flop flop,<br>
+            Dávid úgy mattol hogy a tábla is pop-pop 💥</p>
+            <p>Queen fent, queen lent, Bence teljesen cooked 🔥<br>
+            Dávid ellen a stratégiája már rég overcooked 🍳</p>
+            <p><strong>Bence:</strong> „Én vagyok a sigma!!"<br>
+            Dávid két lépés után: „Tesó, menj vissza Robloxba ⛏️😂"</p>
+            <p class="score-board">BENCE: ♟️♟️♟️<br>
+            DÁVID: ♟️♟️♟️♟️♟️♟️♟️<br>
+            BRAINROT: 99999% 🧠💀<br>
+            SAKK-MATT: ABSOLUTE W 🗿🏆</p>
+        </div>
+
+        </div>
+
+        <div class="side-col">
+
+            <div class="side-box">
+                <h3 class="rainbow-text">Goofy-O-Meter 📊🗿</h3>
+                <div class="meter-label">Brainrot</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <div class="meter-label">Sigma üzemmód</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+                <div class="meter-label">Aura</div>
+                <div class="meter"><div class="meter-fill"></div></div>
+            </div>
+
+            <div class="side-box">
+                <h3 class="rainbow-text">Sticker Wall 🗿✨</h3>
+                <div class="stickers">
+                    <span>🗿</span><span>👽</span><span>🦝</span><span>🚽</span>
+                    <span>🍄</span><span>🍌</span><span>🐹</span><span>🪩</span>
+                    <span>🐸</span><span>💀</span>
+                </div>
+            </div>
+
+            <div class="side-box">
+                <h3 class="rainbow-text">Side Quest Log 🗒️</h3>
+                <ul class="side-list">
+                    <li>✅ fanum taxolni a bootloadert 🦝</li>
+                    <li>❌ nyerni EGY sát mozgalmat Dávid ellen ♟️💀</li>
+                    <li>✅ TWRP-order a 4. dimenzióból 📐🌌</li>
+                    <li>🟨 fűhez nyúlni (letiltva) 🌱⛔</li>
+                    <li>✅ 12 kvadrillió raccoon aurát felhalmozni 🦝⚡</li>
+                </ul>
+            </div>
 
         <div class="links">
             <a href="https://github.com/micr0softstore" class="link-btn" target="_blank">
@@ -304,8 +644,10 @@
             </a>
         </div>
 
+        </div>
+
         <div class="footer">
-            Made with ❤️‍🔥 for Kókai Balázs
+            Made with 💅🌈 chaotic love for Kókai Balázs — as it should be. 🖤
         </div>
     </div>
 
